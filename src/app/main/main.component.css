@@ -1,0 +1,42 @@
+h1{
+    color:red;
+}
+
+p{
+    color:rgb(115, 29, 196);
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+button {
+    background-color: rgb(241, 232, 250);
+    color: rgb(0, 0, 0);
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: rgb(163, 94, 228);
+}
+
+.type{
+   font-size: 20px;
+   border:2px solid #311616;
+}
+
+h5{
+    font-size: 25px;
+}
+
+.primary{
+    color:red;
+}
+
+.big{
+    font-size: 30px;
+  
+}
+
+.font{
+    font-style: italic;
+}

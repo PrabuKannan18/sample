@@ -1,0 +1,10 @@
+<h2>Service </h2>
+<div class="container mt-4">
+    <h2 class="mb-4">Customer Management</h2>
+    <div class="mb-4 p-3 border rounded bg-light">
+      <h3 class="mb-3">Add Customer</h3>
+      <div class="input-group">
+        <input type="text" #box class="form-control" placeholder="Enter customer name">
+        <button (click)="addCustomer(box.value)" class="btn btn-primary ms-2">Add</button>
+      </div>
+    </div>

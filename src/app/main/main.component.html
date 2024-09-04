@@ -1,0 +1,81 @@
+<h2>Components</h2>
+
+<h1> {{name}}</h1>
+<input type="text" [(ngModel)]="name">
+
+<hr>
+
+<h2>Event binding</h2>
+<p class="p-1">You have clicked {{clickCount}}</p>
+
+<button (click) = "clickMe()">click Me!</button>
+
+<hr>
+
+
+<div class="container mt-3 ">
+    <div class="row justify-content-center text-center">
+        <div class="col-6 col-xxl-4 ">
+            <div class="h3 text-center">Directives</div>
+            <button class="btn " (click)="onToggle()" >
+                {{! isAngularDeveloper? 'Switch to AngularDeveloper' : 'Switch to Programming'}}
+            </button>
+            <hr>
+            <p class="h2">{{ isAngularDeveloper? 'List of AngularDeveloper' : 'List of Programming'}} </p>
+            <ul class="list-group" *ngIf="isAngularDeveloper; else ProgrammingTemplate" >
+                <li class="list-group-item" *ngFor="let developer of AngularDeveloper">{{developer}}</li>
+            </ul>
+            <ng-template #ProgrammingTemplate>
+            <ul class="list-group">
+                <li class="list-group-item" *ngFor="let program of Programming">{{program}}</li>
+            </ul>
+        </ng-template>
+        </div>
+    </div>
+</div>
+
+<hr>
+<h2 class="h2 mb-3">ngSwitch </h2>
+<label for="floatingInput">Type number : </label>
+<input type="number" class="form ms-2" id="floatingInput" [(ngModel)]="num"> 
+<div [ngSwitch]="num">
+    <div *ngSwitchCase="1">One</div>
+    <div *ngSwitchCase="2">Two</div>
+    <div *ngSwitchCase="3">Three</div>
+    <div *ngSwitchDefault>The value is unknown</div> 
+</div>
+
+<hr>
+<h2>ngClass</h2>
+<div class="d-flex flex-row">
+<h2 class="p-2 ms-3 fs-2 text-danger">Red<input type="checkbox" class="form-check-input p-3 ms-2 "  style="border:2px solid DodgerBlue;" [(ngModel)]="enableRed"></h2>
+<h2 class="p-2 ms-3 fs-2 text-success">Big<input type="checkbox" class="form-check-input p-3 ms-2 "  style="border:2px solid DodgerBlue;" [(ngModel)]="enableBig"></h2>
+<h2 class="p-2 ms-3 fs-2 text-danger">Font<input type="checkbox" class="form-check-input p-3 ms-2 "  style="border:2px solid DodgerBlue;" [(ngModel)]="enableFont"></h2>
+</div>
+<div [ngClass]="{
+    
+    'primary':enableRed,
+    'big':enableBig,
+    'font':enableFont,
+
+  }" class="p-2" >
+
+   Angular developer</div>
+
+   <hr>
+<h2 class="">ngStyle</h2>
+<div class="fs-4 p-3 ms-2">
+   color: <input type="text" [(ngModel)]="color">
+   <div [ngStyle]="{
+    'color':color,
+   }" >Prabu</div>
+</div>
+
+<hr>
+<h2 class="mb-4">pipes</h2>
+
+<h6>formatted data : {{toDate}}</h6>
+<h6>short : {{toDate | date : 'short'}}</h6>
+<h6>Fulldate : {{toDate | date : 'fullDate'}}</h6>
+<h6>price :{{price | currency:'INR' }} </h6>
+

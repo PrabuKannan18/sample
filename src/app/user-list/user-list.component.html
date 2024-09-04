@@ -1,0 +1,31 @@
+<h3 class="h3">User List Component</h3>
+<h4>Http client</h4>
+<div class="container ">
+    <form  [formGroup]="userForm"  action="" method="post" (submit)="onSubmit()" >
+     <div class="row col-auto">
+        <label>Name : <input type="text" class="form-control" formControlName="name" > </label>
+        <label>username : <input type="text" class="form-control" formControlName="username" > </label>
+        <label>email : <input type="email" class="form-control" formControlName="email" > </label>
+        <button type="submit" class="btn btn-primary mt-2" >Submit</button>
+      </div>
+      </form>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Name</th>
+        <th scope="col">Username</th>
+        <th scope="col">Email</th>
+      </tr>
+    </thead>
+    <tbody class="table-group-divider">
+      <tr *ngFor="let user of users">
+        <th >{{ user.id }}</th>
+        <td>{{ user.name }}</td>
+        <td>{{ user.username }}</td>
+        <td>{{ user.email }}</td>
+                          
+      </tr>
+    </tbody>
+  </table>
+</div>

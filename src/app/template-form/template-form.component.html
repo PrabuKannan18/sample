@@ -1,0 +1,47 @@
+<h3>Template form</h3>
+  
+<div class="container mt-5">
+    <h2>User Registration Form</h2>
+    <form #userForm="ngForm" (ngSubmit)="onSubmit(userForm)" novalidate >
+      <div class="mb-3">
+        <label for="firstName" class="form-label">First Name</label>
+        <input type="text" id="firstName" name="firstName" [(ngModel)]="model.firstName" #firstName="ngModel" class="form-control" required>
+        <div  *ngIf="firstName.invalid && firstName.touched" class="text-danger">
+          First name is required.
+        </div>
+      </div>
+  
+      <div class="mb-3">
+        <label for="lastName" class="form-label">Last Name</label>
+        <input type="text" id="lastName" name="lastName" [(ngModel)]="model.lastName" #lastName="ngModel" class="form-control" required>
+        <div *ngIf="lastName.invalid && lastName.touched" class="text-danger">
+          Last name is required.
+        </div>
+      </div>
+  
+      <div class="mb-3">
+        <label for="username" class="form-label">Username</label>
+        <input type="text" id="username" name="username" [(ngModel)]="model.username" #username="ngModel" class="form-control" required>
+        <div   *ngIf="username.invalid && username.touched"  class="text-danger">
+          Username is required.
+        </div>
+      </div>
+  
+      <div class="mb-3">
+        <label for="email" class="form-label">Email</label>
+        <input type="email" id="email" name="email" [(ngModel)]="model.email" #email="ngModel" class="form-control" required email>
+        <div *ngIf="email.invalid && email.touched"  class="text-danger">
+         Email is required.</div>
+      </div>
+  
+      <div class="mb-3">
+        <label for="password" class="form-label">Password</label>
+        <input type="password" id="password" name="password" [(ngModel)]="model.password" #password="ngModel" class="form-control" required>
+        <div  *ngIf="password.invalid && password.touched" class="text-danger">
+         Password is required</div>
+      </div>
+
+      <button  class="btn btn-primary" type="submit">Submit</button>
+    </form>
+  </div>
+  

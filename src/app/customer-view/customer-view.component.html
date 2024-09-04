@@ -1,0 +1,7 @@
+<div class="p-3 border rounded bg-light">
+    <h3 class="mb-3">View Customers</h3>
+    <p *ngIf="customers.length == 0" class="text-muted">No customers available.</p>
+    <ul class="list-group">
+      <li *ngFor="let customer of customers" class="list-group-item">{{customer.name}}</li>
+    </ul>
+  </div>
